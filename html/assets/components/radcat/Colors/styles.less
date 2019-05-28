@@ -1,0 +1,117 @@
+//The colors for the top navigation bar
+@nav-bg-color: @dark-highlight-color;
+@nav-title-color: @light-color;
+@nav-link-color: lighten(@light-main-color, 15%);
+//Main area background color
+@page-bg-color: @light-light-color;
+@alt-page-bg-color: @light-color;
+//Side and far background color
+@html-bg-color: @light-color;
+
+//Background image for main call to action
+@bg-img-name: 'smoke.jpg';
+//If different source folder edit this line
+@main-bg-img-link: ~"url('https://images.pexels.com/photos/158571/architecture-about-building-modern-158571.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')";
+
+//Settings for borders
+@default-border: 1px solid @dark-color;
+@default-border-radius: 4px;
+
+// Anton|Lato|Montaga|Open+Sans+Condensed:300|PT+Sans|Sacramento|Share+Tech+Mono
+//Three default categories for text colors & fonts.
+//Main text is most p tags, links, and buttons. 
+//Should be plain and readable.
+@main-text-color: @dark-color;
+@main-text-font: "Lato";
+//Header text includes most headers, h2s-h5s.
+//Should be easy to read, but stand out.
+@header-text-color: @secondary-color;
+@header-text-font: "Share Tech Mono";
+//Top text is loosely h1s & h2s. 
+//Should be unique to capture attention. Displayed large.
+@top-text-color: @highlight-color;
+@top-text-font: "Anton";
+
+@unique-text-font: "Sacramento";
+
+//Link colors
+@link-color: @main-color;
+@link-hover: @highlight-color;
+
+//Button colors
+@default-button-text-color: @main-text-color;
+@default-button-bg-color: @grey-color;
+
+@primary-button-text-color: @light-color;
+@primary-button-bg-color: @highlight-color;
+
+@secondary-button-text-color: @light-color;
+@secondary-button-bg-color: @secondary-color;
+
+@cancel-button-text-color: @light-color;
+@cancel-button-bg-color: @cancel-color;
+
+@confirm-button-text-color: @light-color;
+@confirm-button-bg-color: @confirm-color;
+
+
+
+
+//*************************
+//     TEXT/FONTS
+//*************************
+.set-font-styles(@font, @font-size, @color, @margin, @line-height) {
+    font-family: ~"@{font}, serif";
+    font-size: @font-size;
+    color: @color;
+    margin: @margin;
+    line-height: @line-height;
+}
+
+
+a, html { font-family: @main-text-font;}
+li {line-height:1.8;}
+h1 {
+    .set-font-styles(@unique-text-font, 4rem, @top-text-color, 5px 0, 1); 
+}
+h2 {
+    .set-font-styles(@top-text-font, 3rem, @top-text-color, 5px 0, 1); 
+}
+h3 {
+    .set-font-styles(@header-text-font, 2rem, @header-text-color, 5px 0, 1); 
+}
+h4 {
+    .set-font-styles(@header-text-font, 1.5rem, @header-text-color, 5px 0, 1); 
+}
+h5 {
+    .set-font-styles(@header-text-font, 1rem, @main-text-color, 5px 0, 1.5); 
+}
+h6 {
+    .set-font-styles(@main-text-font, .8rem, @header-text-color, 5px 0, 1.5); 
+}
+p {
+    .set-font-styles(@main-text-font, 1rem, @main-text-color, 5px 0, 1.5); 
+}
+
+.subtext {
+	display:block;
+	font-size:80%;
+}
+
+//***************************
+//      Links
+//***************************
+
+a {
+    color:@link-color;
+    text-decoration:none;
+    
+    &:visited {color:@link-color;}
+    &:hover {color:@link-hover;}
+}
+
+.text-shadow(@size,@color){
+    text-shadow: ~"@{size} @{size} @{color}, -@{size} -@{size} @{color}, -@{size} @{size} @{color}, @{size} -@{size} @{color}";
+}
+
+
